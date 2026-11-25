@@ -184,8 +184,9 @@ def edit_habit():
             streaks[new_name] = streaks.pop(old_name)
 
         for day in history:
-           if old_name in history[day]:
-                history[day][history[day].index(old_name)] = new_name
+           for day in history:
+            if old_name in history[day]:
+                history[day][history[day].index(old_name)] = new_name 
 
         save_data()
         print("Habit updated!")
